@@ -18,8 +18,8 @@ jobs:
         submodules: recursive
 
     # Start node
-    - name: Era Test Node Action
-      uses: dutterbutter/era-test-node-action@36ffd2eefd46dc16e7e2a8e1715124400ec0a3ba # v1
+    - name: Run anvil-zksync
+      uses: dutterbutter/anvil-zksync-action@d95a459320dcddd6c266f3d829a0a318ca0e8be7
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
@@ -52,13 +52,8 @@ jobs:
     - name: Build SDK
       run: pnpm nx build sdk
 
-    - name: Install zksync-foundry
-      run: |
-        wget -qc https://github.com/matter-labs/foundry-zksync/releases/download/nightly/foundry_nightly_linux_amd64.tar.gz -O - | tar -xz
-        ./forge -V && ./cast -V
-        sudo mv ./forge /usr/local/bin/
-        sudo mv ./cast /usr/local/bin/
-        forge -V && cast -V
+    - name: Install Foundry-ZKsync
+      uses: dutterbutter/foundry-zksync-toolchain@d03577c34b7c9195ee60ed0644b860a6d1b2c2ec
 
     - name: Deploy Demo-App contracts
       run: pnpm nx deploy-contracts demo-app
@@ -92,8 +87,8 @@ jobs:
         submodules: recursive
 
     # Start node
-    - name: Era Test Node Action
-      uses: dutterbutter/era-test-node-action@36ffd2eefd46dc16e7e2a8e1715124400ec0a3ba # v1
+    - name: Run anvil-zksync
+      uses: dutterbutter/anvil-zksync-action@d95a459320dcddd6c266f3d829a0a318ca0e8be7
 
     - name: Setup pnpm
       uses: pnpm/action-setup@v4
@@ -154,8 +149,8 @@ jobs:
         submodules: recursive
 
     # Start node
-    - name: Era Test Node Action
-      uses: dutterbutter/era-test-node-action@36ffd2eefd46dc16e7e2a8e1715124400ec0a3ba # v1
+    - name: Run anvil-zksync
+      uses: dutterbutter/anvil-zksync-action@d95a459320dcddd6c266f3d829a0a318ca0e8be7
 
     # Setup pnpm
     - name: Setup pnpm
