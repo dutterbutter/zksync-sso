@@ -34,11 +34,11 @@ jobs:
 
     # Install dependencies for repo
     - name: Install dependencies
-      run: pnpm install -r --frozen-lockfile
+      run: pnpm install -r
 
     # Install dependencies for the submodule
     - name: Install contract dependencies
-      run: pnpm install -r --frozen-lockfile
+      run: pnpm install -r
       working-directory: packages/contracts
 
     - name: Build contracts
@@ -103,11 +103,11 @@ jobs:
 
     # Install dependencies for repo
     - name: Install dependencies
-      run: pnpm install -r --frozen-lockfile
+      run: pnpm install -r
 
     # Install dependencies for the submodule
     - name: Install contract dependencies
-      run: pnpm install -r --frozen-lockfile
+      run: pnpm install -r
       working-directory: packages/contracts
 
     - name: Build contracts
@@ -166,7 +166,7 @@ jobs:
 
     # Install dependencies for the submodule
     - name: Install contract dependencies
-      run: pnpm install -r --frozen-lockfile
+      run: pnpm install -r
       working-directory: packages/contracts
 
     # Build contracts and generate types
